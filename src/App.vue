@@ -6,13 +6,13 @@ import TheFooterVue from "./components/layout/TheFooter.vue";
 </script>
 
 <template>
-  <div class="grid min-h-screen grid-rows-base">
+  <div class="grid min-h-screen grid-rows-base text-stone-800">
     <div>
       <TheHeader />
     </div>
 
-    <div class="flex gap-10">
-      <div class="p-4">
+    <div class="flex">
+      <div class="w-32 border-r-2 border-stone-200 py-4 px-6">
         <TheAside />
       </div>
       <div class="p-4">

@@ -20,9 +20,13 @@ const pageLinks = createPageLinks();
 <template>
   <aside>
     <nav>
-      <ul class="flex flex-col gap-1">
+      <ul class="flex flex-col gap-2">
         <li v-for="pageLink in pageLinks" :key="pageLink.name">
-          <RouterLink :to="pageLink.path">{{ pageLink.name }}</RouterLink>
+          <RouterLink
+            class="block rounded-full bg-stone-200 px-2 py-0.5 text-center duration-100 hover:bg-stone-300"
+            :to="pageLink.path"
+            >{{ pageLink.name }}</RouterLink
+          >
         </li>
       </ul>
     </nav>
