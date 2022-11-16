@@ -1,7 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SquareSpace from "@/components/day-0/SquareSpace.vue";
+import TopHeading from "@/components/UI/TopHeading.vue";
+</script>
 
 <template>
   <main>
-    <h1>Day 0</h1>
+    <TopHeading>Day 0</TopHeading>
+
+    <div class="mt-8">
+      <SquareSpace></SquareSpace>
+    </div>
   </main>
 </template>
