@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 type Area = {
   id: number;
@@ -7,30 +7,30 @@ type Area = {
 };
 type Player = {
   id: number;
-  name: 'CIRCLE' | 'CROSS';
-  mark: '○' | '✕';
+  name: "CIRCLE" | "CROSS";
+  mark: "○" | "✕";
 };
 
 const firstPlayer: Player = {
   id: 0,
-  name: 'CIRCLE',
-  mark: '○',
+  name: "CIRCLE",
+  mark: "○",
 };
 const secondPlayer: Player = {
   id: 1,
-  name: 'CROSS',
-  mark: '✕',
+  name: "CROSS",
+  mark: "✕",
 };
 
 const isPlaying = ref(false);
 const nextPlayer = ref<Player>();
 const gameArea = ref<Area[]>([]);
-const result = ref('a');
+const result = ref("a");
 
 const createInitialState = (length: number = 9): Area[] => {
   const initialState: Area[] = [];
   for (let i = 0; i < length; i++) {
-    initialState.push({ id: 1, state: '' });
+    initialState.push({ id: 1, state: "" });
   }
   return initialState;
 };

@@ -8,18 +8,18 @@ type PageRoute = {
   component: () => Promise<Component>;
 };
 
-const createPageroutes = (pageLength: number = 25) => {
-  const pageroutes: PageRoute[] = [];
+const createPageRoutes = (pageLength: number = 25) => {
+  const pageRoutes: PageRoute[] = [];
   for (let i = 0; i < pageLength; i++) {
-    pageroutes.push({
+    pageRoutes.push({
       name: `Day-${i}`,
       path: `/day-${i}`,
       component: () => import(`../views/Day${i}View.vue`),
     });
   }
-  return pageroutes;
+  return pageRoutes;
 };
-const pageroutes = createPageroutes();
+const pageRoutes = createPageRoutes();
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,7 +29,7 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
-    ...pageroutes,
+    ...pageRoutes,
   ],
 });
 
