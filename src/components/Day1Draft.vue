@@ -25,6 +25,7 @@ const secondPlayer: Player = {
 const isPlaying = ref(false);
 const nextPlayer = ref<Player>();
 const gameArea = ref<Area[]>([]);
+const result = ref('a');
 
 const createInitialState = (length: number = 9): Area[] => {
   const initialState: Area[] = [];
@@ -85,6 +86,17 @@ const onMarkToArea = (index: number): void => {
           </button>
         </li>
       </ul>
+    </div>
+
+    <div v-if="result" class="mt-4">
+      <p>winner is {{ result }}!</p>
+      <button
+        type="button"
+        @click="resetGame"
+        class="rounded-full bg-rose-600 px-4 py-1 text-green-50"
+      >
+        restart
+      </button>
     </div>
   </div>
 </template>
