@@ -32,6 +32,5 @@ const router = createRouter({
     ...pageroutes,
   ],
 });
-console.log(pageroutes);
 
 export default router;
