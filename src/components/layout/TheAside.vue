@@ -23,7 +23,8 @@ const pageLinks = createPageLinks();
       <ul class="flex flex-col gap-2">
         <li v-for="pageLink in pageLinks" :key="pageLink.name">
           <RouterLink
-            class="block rounded-full bg-stone-200 px-2 py-0.5 text-center duration-100 hover:bg-stone-300"
+            class="block rounded-full bg-stone-300 px-2 py-0.5 text-center text-sm text-stone-50 duration-100 hover:bg-stone-400"
+            active-class="!bg-rose-100 !font-bold !text-rose-500"
             :to="pageLink.path"
             >{{ pageLink.name }}</RouterLink
           >
