@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Day1Draft from "@/components/Day1Draft.vue";
+import Day1Draft from '@/components/Day1Draft.vue';
 </script>
 
 <template>
   <main>
-    <h1>Day 0</h1>
+    <h1>Day 0 / tic-tac-toe</h1>
 
     <Day1Draft />
   </main>
