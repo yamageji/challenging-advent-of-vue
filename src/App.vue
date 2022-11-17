@@ -15,7 +15,7 @@ import TheFooterVue from "./components/layout/TheFooter.vue";
       <div class="w-32 border-r-2 border-stone-200 py-4 px-6">
         <TheAside />
       </div>
-      <div class="p-4">
+      <div class="p-8">
         <RouterView />
       </div>
     </div>
