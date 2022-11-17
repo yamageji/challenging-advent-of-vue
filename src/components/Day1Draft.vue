@@ -5,10 +5,25 @@ type Area = {
   id: number;
   state: string;
 };
-type Mark = 'CIRCLE' | 'CROSS' | '';
+type Player = {
+  id: number;
+  name: 'CIRCLE' | 'CROSS';
+  mark: '○' | '✕';
+};
+
+const firstPlayer: Player = {
+  id: 0,
+  name: 'CIRCLE',
+  mark: '○',
+};
+const secondPlayer: Player = {
+  id: 1,
+  name: 'CROSS',
+  mark: '✕',
+};
 
 const isPlaying = ref(false);
-const nextTurn = ref<Mark>('');
+const nextPlayer = ref<Player>();
 const gameArea = ref<Area[]>([]);
 
 const createInitialState = (length: number = 9): Area[] => {
@@ -21,17 +36,17 @@ const createInitialState = (length: number = 9): Area[] => {
 const startGame = (): void => {
   gameArea.value = createInitialState();
   isPlaying.value = true;
-  nextTurn.value = Math.floor(Math.random() * 2) ? 'CIRCLE' : 'CROSS';
+  nextPlayer.value = Math.floor(Math.random() * 2) ? firstPlayer : secondPlayer;
 };
 const resetGame = (): void => {
   gameArea.value = createInitialState();
   isPlaying.value = false;
 };
-const toggleTurn = (): Mark =>
-  (nextTurn.value = nextTurn.value === 'CROSS' ? 'CIRCLE' : 'CROSS');
+const toggleTurn = (): Player =>
+  (nextPlayer.value = nextPlayer.value!.id ? firstPlayer : secondPlayer);
 const onMarkToArea = (index: number): void => {
   if (gameArea.value) {
-    gameArea.value[index].state = nextTurn.value === 'CROSS' ? '✕' : '○';
+    gameArea.value[index].state = nextPlayer.value!.mark;
   }
   toggleTurn();
 };
@@ -57,7 +72,7 @@ const onMarkToArea = (index: number): void => {
     </button>
 
     <div v-if="isPlaying" class="mt-4">
-      <p>next turn: {{ nextTurn }}</p>
+      <p>next player: {{ nextPlayer?.mark }}</p>
 
       <ul class="mt-4 flex w-[128px] flex-wrap gap-1">
         <li v-for="(area, index) in gameArea" :key="area.id">
