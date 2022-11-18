@@ -9,9 +9,9 @@ const winPattern = [
   [2, 4, 6],
 ];
 
-export const winLossCalculation = (value: string[]) => {
-  let result: string[][] = [];
-  let judge = "";
+export const calculateWinLoss = (value: string[]) => {
+  let judgeEachPattern: string[][] = [];
+  let judgeWinLoss = "";
 
   winPattern.forEach((pattern) => {
     let array: string[] = [];
@@ -22,14 +22,14 @@ export const winLossCalculation = (value: string[]) => {
         array.push("✕");
       }
     });
-    result.push(array);
+    judgeEachPattern.push(array);
   });
-  result.forEach((array) => {
+  judgeEachPattern.forEach((array) => {
     if (array[0] === "○" && array[1] === "○" && array[2] === "○") {
-      judge = "○";
+      judgeWinLoss = "○";
     } else if (array[0] === "✕" && array[1] === "✕" && array[2] === "✕") {
-      judge = "✕";
+      judgeWinLoss = "✕";
     }
   });
-  return judge;
+  return judgeWinLoss;
 };
