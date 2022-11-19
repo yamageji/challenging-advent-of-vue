@@ -20,7 +20,7 @@ const activePanelClass = (index: number) =>
     ? "bg-red-500"
     : props.gameArea[index] === "✕"
     ? "bg-green-500"
-    : "bg-stone-200";
+    : "bg-stone-200 hover:bg-stone-300 duration-200";
 </script>
 
 <template>
@@ -31,7 +31,7 @@ const activePanelClass = (index: number) =>
           type="button"
           :class="activePanelClass(index)"
           class="flex h-10 w-10 items-center justify-center rounded-sm font-bold text-white"
-          @click.once="onMarkToArea(index)"
+          @click="onMarkToArea(index)"
           :disabled="result !== ''"
         >
           {{ gameArea[index] }}

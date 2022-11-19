@@ -10,11 +10,11 @@ const winPattern = [
 ];
 
 export const calculateWinLoss = (value: string[]) => {
-  let judgeEachPattern: string[][] = [];
+  const judgeEachPattern: string[][] = [];
   let judgeWinLoss = "";
 
   winPattern.forEach((pattern) => {
-    let array: string[] = [];
+    const array: string[] = [];
     pattern.forEach((pat) => {
       if (value[pat] === "○") {
         array.push("○");

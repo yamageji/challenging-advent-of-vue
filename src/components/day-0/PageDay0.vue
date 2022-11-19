@@ -37,18 +37,14 @@ const startGame = (): void => {
   isPlaying.value = true;
   nextPlayer.value = Math.floor(Math.random() * 2) ? firstPlayer : secondPlayer;
 };
-const resetGame = (): void => {
-  gameArea.value = createInitialState();
-  isPlaying.value = false;
-};
 const toggleTurn = (): Player =>
   (nextPlayer.value = nextPlayer.value!.id ? firstPlayer : secondPlayer);
 const onMarkToArea = (index: number): void => {
-  if (gameArea.value) {
+  if (gameArea.value[index] === "") {
     gameArea.value[index] = nextPlayer.value!.mark;
+    toggleTurn();
   }
-  toggleTurn();
-  if (result.value !== "") isPlaying.value === false;
+  if (result.value !== "") isPlaying.value = false;
 };
 
 gameArea.value = createInitialState();
@@ -62,7 +58,6 @@ gameArea.value = createInitialState();
       @onMarkToArea="onMarkToArea"
     />
     <GameController
-      @resetGame="resetGame"
       @startGame="startGame"
       :result="result"
       :isPlaying="isPlaying"

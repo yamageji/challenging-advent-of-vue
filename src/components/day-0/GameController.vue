@@ -16,14 +16,10 @@ const props = defineProps<Props>();
 
 type Emits = {
   (e: "startGame"): void;
-  (e: "resetGame"): void;
 };
 const emit = defineEmits<Emits>();
 const startGame = () => {
   emit("startGame");
-};
-const resetGame = () => {
-  emit("resetGame");
 };
 
 const resultClass = computed(() =>
@@ -41,7 +37,7 @@ const resultClass = computed(() =>
       class="w-40 rounded-md border border-stone-200 p-4"
       :class="resultClass"
     >
-      <p v-if="!isPlaying" class="text-lg font-bold">push start!</p>
+      <p v-if="!isPlaying && !result" class="text-lg font-bold">push start!</p>
       <p v-else-if="isPlaying && !result" class="text-lg font-bold">
         next player : {{ nextPlayer?.mark }}
       </p>
@@ -52,26 +48,26 @@ const resultClass = computed(() =>
 
     <div class="mt-4">
       <button
-        v-if="!isPlaying"
+        v-if="!isPlaying && !result"
         type="button"
         @click="startGame"
-        class="rounded-full bg-rose-500 px-4 py-1 text-green-50"
+        class="rounded-full bg-rose-500 px-4 py-1 text-green-50 duration-200 hover:bg-rose-600"
       >
         start
       </button>
       <button
         v-else-if="isPlaying && !result"
         type="button"
-        @click="resetGame"
-        class="rounded-full bg-stone-500 px-4 py-1 text-green-50"
+        @click="startGame"
+        class="rounded-full bg-stone-500 px-4 py-1 text-green-50 duration-200 hover:bg-stone-600"
       >
         reset
       </button>
       <button
         v-else-if="result"
         type="button"
-        @click="resetGame"
-        class="rounded-full bg-rose-500 px-4 py-1 text-green-50"
+        @click="startGame"
+        class="rounded-full bg-rose-500 px-4 py-1 text-green-50 duration-200 hover:bg-rose-600"
       >
         restart
       </button>
