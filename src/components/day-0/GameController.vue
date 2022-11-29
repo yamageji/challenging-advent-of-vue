@@ -41,6 +41,7 @@ const resultClass = computed(() =>
       <p v-else-if="isPlaying && !result" class="text-lg font-bold">
         next player : {{ nextPlayer?.mark }}
       </p>
+      <p v-else-if="result === 'draw'">draw!!</p>
       <p v-else-if="result" class="text-lg font-bold">
         winner is {{ result }} !
       </p>
