@@ -10,6 +10,9 @@ const winPattern = [
 ];
 
 export const calculateWinLoss = (value: string[]) => {
+  const isDraw = value.every((val) => val !== "");
+  if (isDraw) return "draw";
+
   const judgeEachPattern: string[][] = [];
   let judgeWinLoss = "";
 
