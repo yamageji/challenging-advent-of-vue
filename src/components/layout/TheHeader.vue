@@ -1,5 +1,7 @@
 <template>
-  <header class="bg-rose-500 py-4 px-8 text-xl font-bold text-white">
+  <header
+    class="bg-stone-700 py-4 px-8 text-xl font-bold tracking-wide text-white"
+  >
     <div>
       <a href="/"> My Advent Of Vue 2022</a>
     </div>

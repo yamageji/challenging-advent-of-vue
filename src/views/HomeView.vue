@@ -4,7 +4,6 @@ import TopHeading from "@/components/UI/TopHeading.vue";
 
 <template>
   <main>
-    <TopHeading>Advent Of Vue 2022</TopHeading>
     <p class="mt-4">
       公式サイト：
       <a href="https://adventofvue.com/" class="underline underline-offset-4"
