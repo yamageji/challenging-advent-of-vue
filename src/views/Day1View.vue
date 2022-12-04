@@ -5,7 +5,10 @@ import PageDay1 from "@/components/day-1/PageDay1.vue";
 
 <template>
   <main>
-    <TopHeading>Day-1 / debounced search bar</TopHeading>
+    <TopHeading>
+      <template v-slot:day> Day 1 </template>
+      debounced search bar
+    </TopHeading>
     <PageDay1 class="mt-10" />
   </main>
 </template>

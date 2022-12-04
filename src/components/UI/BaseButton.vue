@@ -18,11 +18,11 @@ const handleClick = () => {
 
 const styleByType = computed(() => {
   if (props.type === "primary") {
-    return "bg-rose-600 text-rose-50 hover:bg-rose-700";
+    return "bg-green-600 text-green-50 hover:bg-green-700";
   } else if (props.type === "secondary") {
-    return "border border-stone-800 text-stone-800 hover:bg-stone-50";
+    return "bg-green-200 text-green-800 hover:bg-green-300";
   } else if (props.type === "outline") {
-    return "border border-rose-800 text-rose-800 hover:bg-rose-50";
+    return "border border-green-800 text-green-800 hover:bg-green-50";
   } else {
     return "";
   }

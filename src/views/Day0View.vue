@@ -5,7 +5,10 @@ import PageDay0 from "@/components/day-0/PageDay0.vue";
 
 <template>
   <main>
-    <TopHeading>Day-0 / tic-tac-toe</TopHeading>
+    <TopHeading>
+      <template v-slot:day> Day 0 </template>
+      tic-tac-toe
+    </TopHeading>
     <PageDay0 />
   </main>
 </template>
