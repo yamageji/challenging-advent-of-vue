@@ -6,7 +6,7 @@
       <slot name="day" />
     </span>
     <span
-      class="flex h-10 items-center rounded-r-md border border-stone-300 px-6 text-xl"
+      class="flex h-10 items-center rounded-r-md border border-stone-300 pl-4 pr-6 text-xl"
     >
       <slot />
     </span>
