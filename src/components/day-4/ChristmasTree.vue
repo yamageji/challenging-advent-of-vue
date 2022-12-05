@@ -13,11 +13,11 @@ const props = withDefaults(defineProps<Props>(), {
 const circleSize = computed(() => {
   switch (props.size) {
     case "sm":
-      return "h-12 w-12 -m-1.5";
+      return "h-12 w-12 -mx-2 -my-1.5";
     case "md":
-      return "h-16 w-16 -m-2";
+      return "h-16 w-16 -mx-3 -my-2";
     case "lg":
-      return "h-20 w-20 -m-3";
+      return "h-20 w-20 -mx-4 -my-3";
   }
 });
 </script>
