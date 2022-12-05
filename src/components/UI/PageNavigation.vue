@@ -44,6 +44,7 @@ const linkClassByType = computed(() => {
 <template>
   <nav>
     <ul :class="layoutClassByType" class="">
+      <div aria-hidden="true" class="col-span-3" />
       <li v-for="pageLink in pageLinks" :key="pageLink.name">
         <RouterLink
           :class="linkClassByType"
