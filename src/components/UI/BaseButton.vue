@@ -24,7 +24,7 @@ const styleByType = computed(() => {
   } else if (props.type === "outline") {
     return "border border-green-800 text-green-800 hover:bg-green-50";
   } else if (props.type === "disabled") {
-    return "bg-stone-200 text-stone-800";
+    return "bg-stone-300 text-stone-50";
   } else {
     return "";
   }

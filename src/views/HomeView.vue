@@ -5,7 +5,10 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/vue/24/solid";
 
 <template>
   <main>
-    <PageNavigation type="weekly" />
+    <h1 class="text-3xl font-bold">December 2022</h1>
+    <div class="mt-10">
+      <PageNavigation type="weekly" />
+    </div>
     <p class="mt-8 flex items-center text-lg">
       <span> 公式サイト： </span>
       <a
