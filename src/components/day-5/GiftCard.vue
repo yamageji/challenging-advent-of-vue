@@ -9,7 +9,9 @@ const props = defineProps<Props>();
 
 <template>
   <div>
-    <div class="w-full rounded-xl bg-emerald-500 p-8">
+    <div
+      class="relative w-full rounded-xl bg-emerald-500 p-10 before:absolute before:left-4 before:top-4 before:h-6 before:w-6 before:rounded-full before:bg-white"
+    >
       <div class="flex flex-col items-center">
         <img
           src="/assets/santa.svg"
@@ -18,7 +20,7 @@ const props = defineProps<Props>();
         />
         <div class="w-full">
           <h1
-            class="mt-4 text-center text-3xl font-bold tracking-wider text-white"
+            class="mt-3 text-center text-3xl font-bold tracking-wide text-white"
           >
             Happy Holidays!
           </h1>
