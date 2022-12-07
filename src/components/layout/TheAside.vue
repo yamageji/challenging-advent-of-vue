@@ -4,6 +4,6 @@ import PageNavigation from "../UI/PageNavigation.vue";
 
 <template>
   <aside>
-    <PageNavigation />
+    <PageNavigation type="colume" />
   </aside>
 </template>
