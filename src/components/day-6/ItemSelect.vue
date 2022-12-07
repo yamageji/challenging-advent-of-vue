@@ -19,7 +19,7 @@ watch(selectedItem, (newItem, prevItem) => {
   <select
     v-else
     v-model="selectedItem"
-    class="rounded-md border-2 bg-stone-100 p-2"
+    class="w-80 rounded-md border-2 bg-stone-100 p-2"
   >
     <option disabled value="">Select an item</option>
     <option v-for="item in availableItems" :value="item" :key="item.id">

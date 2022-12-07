@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 import ComparisonSummary from "./ComparisonSummary.vue";
 import ItemSelect from "./ItemSelect.vue";
 import { useItemComparison } from "@/composables/itemComparison";
 
 const apiUrl = "https://dummyjson.com/products";
-const { isFetchingItems, availableItems, itemsToCompare } = useItemComparison();
+const { isFetchingItems, availableItems } = useItemComparison();
 
 onMounted(async () => {
   try {
@@ -22,10 +22,12 @@ onMounted(async () => {
 
 <template>
   <div class="max-w-lg">
-    <div class="flex flex-col justify-center gap-5">
+    <div class="flex flex-col justify-center gap-2">
       <ItemSelect />
       <ItemSelect />
-      <ComparisonSummary />
+      <div class="mt-6">
+        <ComparisonSummary />
+      </div>
     </div>
   </div>
 </template>
