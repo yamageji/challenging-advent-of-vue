@@ -1,24 +1,33 @@
 <script setup lang="ts">
-import { computed, watch } from "vue";
-import { useCycleList } from "@vueuse/core";
+import { ref, computed, watch } from "vue";
 import { useI18n } from "vue-i18n";
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
+} from "@headlessui/vue";
+import { LanguageIcon, ChevronDownIcon } from "@heroicons/vue/24/solid";
 
 const { t, d, locale, availableLocales } = useI18n();
 
-const list = useCycleList(availableLocales);
-watch(list.state, (state) => (locale.value = state));
+const languageList = (value: string) => {
+  switch (value) {
+    case "en":
+      return "English";
+    case "de":
+      return "Deutsch";
+    case "ja-jp":
+      return "日本語";
+  }
+};
+
 const christmasDate = new Date("2022/12/25");
 
 const days = computed(() => {
   const delta = christmasDate.getTime() - new Date();
   return Math.ceil(delta / (1000 * 60 * 60 * 24));
 });
-
-const flags = {
-  en: "i-twemoji-flag-united-states",
-  de: "i-twemoji-flag-germany",
-  "ja-JP": "i-twemoji-flag-japan",
-};
 </script>
 
 <template>
@@ -39,14 +48,27 @@ const flags = {
       </template>
     </i18n-t>
 
-    <div class="w-200px flex items-center justify-between">
-      <button class="rounded-md bg-green-500 px-2 py-1" @click="list.next()">
-        選択ボタン
-      </button>
-      <div>
-        <span :class="flags[locale]" />
-        {{ t("language") }}
-      </div>
-    </div>
+    <Listbox v-model="locale">
+      <ListboxButton
+        class="flex items-center justify-center gap-4 rounded-full border border-stone-300 px-4 py-1"
+      >
+        <div class="flex items-center gap-2">
+          <LanguageIcon class="h-6 w-6" />
+          <span>
+            {{ t("language") }}
+          </span>
+        </div>
+        <ChevronDownIcon class="h-4 w-4" />
+      </ListboxButton>
+      <ListboxOptions>
+        <ListboxOption
+          v-for="item in availableLocales"
+          :key="item"
+          :value="item"
+        >
+          {{ languageList(item) }}
+        </ListboxOption>
+      </ListboxOptions>
+    </Listbox>
   </section>
 </template>

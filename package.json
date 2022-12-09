@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.5",
+    "@headlessui/vue": "^1.7.5",
     "@heroicons/vue": "^2.0.13",
     "@types/debounce": "^1.2.1",
     "@vueuse/core": "^9.6.0",
