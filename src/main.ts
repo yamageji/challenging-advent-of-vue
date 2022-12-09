@@ -20,7 +20,7 @@ const i18n = createI18n({
         weekday: "long",
       },
     },
-    "ja-JP": {
+    "ja-jp": {
       short: {
         year: "numeric",
         month: "short",
