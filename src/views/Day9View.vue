@@ -7,7 +7,7 @@ import PageDay9 from "@/components/day-9/PageDay9.vue";
   <main>
     <TopHeading>
       <template v-slot:day> Day 9 </template>
-      i18n happy holidays
+      sort presents
     </TopHeading>
     <div class="mt-10">
       <PageDay9 />
