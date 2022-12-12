@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
 type Props = {
-  isTwincle: boolean;
+  isTwinkle: boolean;
 };
 const props = defineProps<Props>();
 
@@ -17,7 +15,7 @@ const twinkleDelay = Math.random() * MAX_DELAY;
   <div
     :class="{
       'twinkle relative z-20 m-2 h-2 w-2 rounded-full bg-yellow-100 shadow-md':
-        props.isTwincle,
+        props.isTwinkle,
     }"
     :style="{
       top: `${offsetY}px`,

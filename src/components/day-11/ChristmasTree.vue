@@ -18,6 +18,8 @@ const circleSize = computed(() => {
       return "h-16 w-16 -mx-3 -my-2";
     case "lg":
       return "h-20 w-20 -mx-4 -my-3";
+    default:
+      return "";
   }
 });
 </script>
@@ -31,6 +33,7 @@ const circleSize = computed(() => {
     <div class="flex flex-row justify-center">
       <div
         v-for="i in volume"
+        :key="i"
         class="relative flex items-center justify-center rounded-full bg-green-500"
         :class="circleSize"
       >
