@@ -1,19 +1,25 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
-const volume = ref(10);
-const boxList = computed(() => new Array(volume.value));
+import { ref } from "vue";
+import EliminationVisualiser from "./EliminationVisualiser.vue";
+
+const numberOfGifts = ref(10);
 </script>
 
 <template>
-  <input type="range" v-model="volume" />
-  {{ volume }}
-  <ul class="flex flex-wrap gap-2">
-    <li
-      v-for="(box, index) in boxList"
-      :key="index"
-      class="flex h-10 w-10 items-center justify-center rounded-md bg-stone-300"
-    >
-      {{ index }}
-    </li>
-  </ul>
+  <div>
+    <div class="flex items-center gap-2">
+      <label for="numberOfGifts">Number of gifts (2 to 30):</label>
+      <input
+        type="range"
+        id="numberOfGifts"
+        min="2"
+        max="30"
+        v-model.number="numberOfGifts"
+        class="border-2 border-orange-500 p-1"
+      />
+    </div>
+    <div class="mt-8">
+      <EliminationVisualiser :number-of-gifts="numberOfGifts" />
+    </div>
+  </div>
 </template>
