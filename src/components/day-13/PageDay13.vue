@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import ChristmasTree from "./ChristmasTree.vue";
 import ChristmasLights from "./ChristmasLights.vue";
+import ChristmasOnament from "./ChristmasOnament.vue";
 import BaseButton from "../UI/BaseButton.vue";
 import { Switch } from "@headlessui/vue";
 
@@ -56,6 +57,7 @@ const isTwincleOn = ref(false);
       <div class="flex h-full w-full items-center justify-center">
         <ChristmasTree size="sm" :volume="volume">
           <ChristmasLights :is-twinkle="isTwincleOn" />
+          <ChristmasOnament />
         </ChristmasTree>
       </div>
       <div class="-m-2 h-12 w-6 rounded-sm bg-amber-700"></div>
