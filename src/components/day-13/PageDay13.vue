@@ -6,7 +6,7 @@ import ChristmasOrnament from "./ChristmasOrnament.vue";
 import BaseButton from "../UI/BaseButton.vue";
 import { Switch } from "@headlessui/vue";
 
-const MAX_VOLUME = 5;
+const MAX_VOLUME = 7;
 const volume = ref(1);
 const isTwinkleOn = ref(false);
 const isOrnament = ref(false);
@@ -72,14 +72,24 @@ const isOrnament = ref(false);
       </div>
     </div>
 
-    <div class="mt-4 flex flex-col items-center justify-center">
-      <div class="flex h-full w-full items-center justify-center">
-        <ChristmasTree size="sm" :volume="volume">
-          <ChristmasLights :is-twinkle="isTwinkleOn" />
-          <ChristmasOrnament :ornament="isOrnament" />
-        </ChristmasTree>
+    <div class="grid grid-cols-1 grid-rows-1 justify-items-center">
+      <img
+        src="assets/star.svg"
+        alt=""
+        class="z-10 col-start-1 row-start-1"
+        v-if="isOrnament"
+      />
+      <div
+        class="col-start-1 row-start-1 mt-7 flex flex-col items-center justify-center"
+      >
+        <div class="flex h-full w-full items-center justify-center">
+          <ChristmasTree size="sm" :volume="volume">
+            <ChristmasLights :is-twinkle="isTwinkleOn" />
+            <ChristmasOrnament :ornament="isOrnament" />
+          </ChristmasTree>
+        </div>
+        <div class="-m-2 h-12 w-6 rounded-sm bg-amber-700"></div>
       </div>
-      <div class="-m-2 h-12 w-6 rounded-sm bg-amber-700"></div>
     </div>
   </div>
 </template>
