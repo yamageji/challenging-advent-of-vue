@@ -17,7 +17,7 @@
     "@types/debounce": "^1.2.1",
     "@vueuse/core": "^9.6.0",
     "debounce": "^1.2.1",
-    "pinia": "^2.0.23",
+    "pinia": "^2.0.28",
     "vite-svg-loader": "^3.6.0",
     "vue": "^3.2.41",
     "vue-i18n": "^9.2.2",
