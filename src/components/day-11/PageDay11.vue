@@ -55,7 +55,7 @@ const isTwincleOn = ref(false);
     <div class="mt-4 flex flex-col items-center justify-center">
       <div class="flex h-full w-full items-center justify-center">
         <ChristmasTree size="sm" :volume="volume">
-          <ChristmasLights :is-twincle="isTwincleOn" />
+          <ChristmasLights :is-twinkle="isTwincleOn" />
         </ChristmasTree>
       </div>
       <div class="-m-2 h-12 w-6 rounded-sm bg-amber-700"></div>
